@@ -88,4 +88,8 @@ class Bola {
         this.ctx.fillStyle = '#000'
         this.ctx.fillRect(this.posicaoX, this.posicaoY, this.largura, this.altura)
     }
+
+    jogar() {
+        const teste = 'Jhonatan'
+    }
 }
