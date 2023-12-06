@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* overflow: hidden; */
+
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: black; */
+}
+
+canvas {
+  width: 1024px;
+  height: 576px;
+  /* border: 1px solid rgb(0, 0, 0); */
+}
+
+#dados {
+  position: relative;
+  width: 1024px;
+  height: 576px;
+
+  /* border: 1px solid red; */
+}
+
+.gameover {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  position: absolute;
+  z-index: 10;
+  left: 400px;
+  top: 200px;
+  font-size: 50px;
+  display: none;
+}
+
+.parar {
+  display: block;
+}
+
+.sumir {
+  display: none;
+}
+
+#vida {
+  width: 200px;
+  height: 10px;
+  position: absolute;
+  border: 2px solid red;
+  background-color: blue;
+  top: 5px;
+  left: 100px;
+}
+
+#interno {
+  width: 200px;
+  height: 10px;
+  background-color: yellow;
+  position: absolute;
+}
+
+.botao {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#paginaPrincipal {
+  width: 1024px;
+  height: 576px;
+  background-color: rgb(252, 29, 0);
+  position: absolute;
+  background-image: url('./img/paginaPrincipal.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}

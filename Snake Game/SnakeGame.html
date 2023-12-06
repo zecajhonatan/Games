@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeGame</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="stage" width="500" height="500"></canvas>
+
+    <script>
+
+        window.onload = function () {
+
+            let canvas = document.getElementById('stage')
+            let ctx = canvas.getContext('2d')
+
+            const velocidadeJogo = 1
+            let posicaoX = 0
+            let posicaoY = 0
+            let velocidadeX = 0
+            let velocidadeY = 0
+            let tamanhoPeca = 10
+            let quantidadePecas = 10
+            let macaInicialX = 20
+            let macaInicialY = 20
+
+            let rastro = [] // trail
+
+            calda = 5 //tail
+
+            function game() {
+
+                posicaoX += velocidadeX
+                posicaoY += velocidadeY
+
+
+                if (posicaoX < 0) {
+                    posicaoX = quantidadePecas - 1
+                }
+                if (posicaoX > quantidadePecas - 1) {
+                    posicaoX = 0
+                }
+                if (posicaoY < 0) {
+                    posicaoY = quantidadePecas - 1
+                }
+                if (posicaoY > quantidadePecas - 1) {
+                    posicaoY = 0
+                }
+
+                ctx.fillStyle = 'black'
+                ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+                ctx.fillStyle = 'red'
+                ctx.fillRect(macaInicialX * tamanhoPeca, macaInicialY * tamanhoPeca, tamanhoPeca, tamanhoPeca)
+
+                ctx.fillStyle = 'gray'
+                for (let i = 0; i < rastro.length; i++) {
+                    
+                    ctx.fillRect(rastro[i].x * tamanhoPeca, rastro[i].y * tamanhoPeca, tamanhoPeca, tamanhoPeca)
+
+                    if (rastro[i].x == posicaoX && rastro[i].y == posicaoY) {
+                        velocidadeX = 0
+                        velocidadeY = 0
+                        calda = 5
+                    }
+                }
+
+                rastro.push({
+                    x: posicaoX,
+                    y: posicaoY
+                })
+
+                while (rastro.length > calda) {
+                    rastro.shift()
+                }
+
+                if (macaInicialX == posicaoX && macaInicialY == posicaoY) {
+                    calda++
+                    macaInicialX = Math.floor(Math.random() * quantidadePecas)
+                    macaInicialY = Math.floor(Math.random() * quantidadePecas)
+                }
+
+            }
+            
+            setInterval(game, 100)
+
+
+            function keyPush(event) {
+                switch (event.keyCode) {
+                    case 37:  // esquerda
+                        velocidadeX = - velocidadeJogo
+                        velocidadeY = 0
+                        break
+
+                    case 38: // cima
+                        velocidadeX = 0
+                        velocidadeY = - velocidadeJogo
+                        break
+
+                    case 39: // direita
+                        velocidadeX = + velocidadeJogo
+                        velocidadeY = 0
+                        break
+
+                    case 40: // baixo
+                        velocidadeX = 0
+                        velocidadeY = + velocidadeJogo
+                        break
+                }
+
+            }
+            document.addEventListener('keydown', keyPush)
+        }
+    </script>
+</body>
+
+</html>

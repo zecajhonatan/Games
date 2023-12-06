@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Space Invaders Game</title>
+
+</head>
+
+<body>
+
+  <div id="dados">
+    <div id="paginaPrincipal"></div>
+    <canvas id="canvas"></canvas>
+
+    <p class="sumir" id="corpo"
+      style="position: absolute; z-index: 10; color: rgb(255, 255, 255); left: 5px; top: 5px; font-size: 14px; font-family: sans-serif;">
+      <span>Score:</span><span id="scoreEl">0</span>
+    </p>
+
+    <div id="vida" class="sumir">
+      <div id="interno"></div>
+    </div>
+
+
+    <div id="teste" class="gameover">
+      <p>GAMEOVER</p>
+    </div>
+  </div>
+  <div>
+    <button type="button" id="iniciarJogo" class="botao">Start</button>
+    <button type="button" id="pararJogo" class="botao">Pause</button>
+    <button type="button" id="reiniciarJogo" class="botao">Restart</button>
+  </div>
+
+
+
+  <script src="particles.js"></script>
+  <script src="invaderProjectile.js"></script>
+  <script src="moviment.js"></script>
+  <script src="invader.js"></script>
+  <script src="grid.js"></script>
+  <script src="control.js"></script>
+  <script src="projectile.js"></script>
+  <script src="player.js"></script>
+  <script src="loop.js"></script>
+</body>
+
+</html>

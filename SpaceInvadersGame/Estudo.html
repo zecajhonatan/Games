@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudo</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #data {
+      width: 100%;
+      height: 70px;
+      background-color: #000;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 35px;
+      font-family: sans-serif;
+      color: #fff;
+    }
+
+    #cdv {
+      width: 100%;
+      height: 50px;
+      background-color: #ffe600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 35px;
+      font-family: sans-serif;
+      color: #000000;
+    }
+
+    #capturarDados {
+      /* display: inline-block; */
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+      /* border: 1px solid; */
+      padding: 5px;
+    }
+
+    .base {
+      width: 30%;
+    }
+
+    .campo {
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+
+<body>
+  <br>
+  <label for="dados">Dados:</label><br>
+  <input type="text" name="dados" id="dados"><br><br>
+  <h1 id="resultado">Resultado</h1><br>
+
+  <button type="button" id="botao">Enviar</button>
+
+  <script>
+    let numero = 0
+    // let index = localStorage.setItem(0, 0)
+
+    let dados = document.querySelector('#dados')
+    let resultado = document.querySelector('#resultado')
+    let botao = document.querySelector('#botao')
+
+
+
+
+    function enviarDados() {
+      numero++
+      if (dados.value != '') {
+        dados.style.border = '2px solid black'
+        localStorage.setItem(numero, dados.value)
+        resultado.innerHTML = localStorage.getItem(numero)
+      } else {
+        alert('Adicione Algo !!!')
+        dados.style.border = '2px solid red'
+      }
+    }
+
+
+    botao.addEventListener('click', () => {
+      enviarDados()
+      let quantidade = localStorage.key(1)
+      console.log(quantidade)
+    })
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
