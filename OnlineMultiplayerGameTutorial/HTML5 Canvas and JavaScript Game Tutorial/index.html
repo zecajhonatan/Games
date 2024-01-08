@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Ideia com Circulos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <div class="fixed text-white text-sm ml-2 mt-1 select-none"><span>Score: </span><span id="scoreEl">0</span></div>
+  <div id="modalEl" class="fixed inset-0 flex items-center justify-center">
+    <div class="bg-white max-w-md w-full p-6 text-center">
+      <h1 id="bigScoreEl" class="text-4xl font-bold leading-none">0</h1>
+      <p class="text-sm text-gray-700 mb-4">Points</p>
+      <div>
+        <button id="startGameBtn" class="bg-blue-500 text-white w-full p-2 rounded-full text-sm">Start Game</button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="canvas"></canvas>
+
+
+
+
+  <!-- Gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+  <script src="particle.js"></script>
+  <script src="enemy.js"></script>
+  <script src="projectiles.js"></script>
+  <script src="player.js"></script>
+  <!-- <script src="control.js"></script> -->
+  <script src="loop.js"></script>
+</body>
+
+</html>

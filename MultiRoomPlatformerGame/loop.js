@@ -1,8 +1,8 @@
 let canvas = document.querySelector("#canvas")
 let ctx = canvas.getContext("2d");
 
-canvas.width = 1024
-canvas.height = 576
+canvas.width = 1024 // largura 
+canvas.height = 576 // altura
 
 const overlay = {
   opacity: 0
@@ -14,6 +14,7 @@ let background
 let door
 
 let player = new Player({
+  
   imageSrc: "./img/img/king/idle.png",
   frameRate: 11,
 
@@ -67,6 +68,7 @@ let player = new Player({
 })
 
 let level = 1
+
 
 let levels = {
   1: {

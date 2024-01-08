@@ -14,13 +14,13 @@ let keys = {
   },
 }
 
-document.addEventListener("keydown", (event) => {
+window.document.addEventListener("keydown", (event) => {
   let key = event.key
   if (player.preventInput) return
   switch (key) {
     case 'ArrowLeft':
       keys.ArrowLeft.pressed = true
-      player.lastKeyPressed = key
+      player.lastKeyPressed = key // ultima tecla pressionada
       break;
     case 'ArrowUp':
       keys.ArrowUp.pressed = true
@@ -55,7 +55,7 @@ document.addEventListener("keydown", (event) => {
   }
 })
 
-document.addEventListener("keyup", (event) => {
+window.document.addEventListener("keyup", (event) => {
   let key = event.key
   switch (key) {
     case 'ArrowLeft':
